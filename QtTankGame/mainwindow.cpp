@@ -19,6 +19,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     float y = ui->label_2->y();
     float x = ui->label_2->x();
     float y_inc = 0.0;
+    float x_inc = 0.0;
 
     if (event->key() == Qt::Key_Up) {
         y_inc = -5.0f;
@@ -28,7 +29,15 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         y_inc = +5.0f;
     }
 
-    ui->label_2->move(QPoint(x, y + y_inc));
+    if (event->key() == Qt::Key_Left) {
+        x_inc = -5.0f;
+    }
+
+    if (event->key() == Qt::Key_Right) {
+        x_inc = +5.0f;
+    }
+
+    ui->label_2->move(QPoint(x + x_inc, y + y_inc));
 }
 
 void MainWindow::mousePressEvent(QMouseEvent *event)
