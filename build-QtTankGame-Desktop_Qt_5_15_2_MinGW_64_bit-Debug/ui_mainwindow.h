@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -25,6 +26,7 @@ public:
     QWidget *centralwidget;
     QLabel *label;
     QLabel *label_2;
+    QFrame *line;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -45,6 +47,11 @@ public:
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(960, 470, 81, 51));
         label_2->setFont(font);
+        line = new QFrame(centralwidget);
+        line->setObjectName(QString::fromUtf8("line"));
+        line->setGeometry(QRect(550, 370, 20, 141));
+        line->setFrameShape(QFrame::VLine);
+        line->setFrameShadow(QFrame::Sunken);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));

@@ -16,7 +16,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
-
         float y_inc = 0.0;
         float x_inc = 0.0;
 
@@ -28,22 +27,23 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
         bool player = false;
 
-        if (event->key() == Qt::Key_Up) {
+        //label_2
+        if (event->key() == Qt::Key_Up && y2 > 10) {
             y_inc = -5.0f;
             player = true;
         }
 
-        if (event->key() == Qt::Key_Down) {
+        if (event->key() == Qt::Key_Down && y2 < 530) {
             y_inc = +5.0f;
             player = true;
         }
-
-        if (event->key() == Qt::Key_Left) {
+        //can't move past mid point
+        if (event->key() == Qt::Key_Left && x2 > 530) {
             x_inc = -5.0f;
             player = true;
         }
 
-        if (event->key() == Qt::Key_Right) {
+        if (event->key() == Qt::Key_Right && x2 < 1000) {
             x_inc = +5.0f;
             player = true;
         }
@@ -52,21 +52,22 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
         if(player == false)
         {
-            if (event->key() == Qt::Key_W) {
-                y_inc = -5.0f;
-            }
+        //label
+        if (event->key() == Qt::Key_W && y1 > 10) {
+            y_inc = -5.0f;
+        }
 
-            if (event->key() == Qt::Key_S) {
-                y_inc = +5.0f;
-            }
+        if (event->key() == Qt::Key_S && y1 < 530) {
+            y_inc = +5.0f;
+        }
 
-            if (event->key() == Qt::Key_A) {
-                x_inc = -5.0f;
-            }
-
-            if (event->key() == Qt::Key_D) {
-                x_inc = +5.0f;
-            }
+        if (event->key() == Qt::Key_A && x1 > 10) {
+            x_inc = -5.0f;
+        }
+        //cant move past mid point
+        if (event->key() == Qt::Key_D && x1 < 470) {
+            x_inc = +5.0f;
+        }
 
             ui->label->move(QPoint(x1 + x_inc, y1 + y_inc));
         }
