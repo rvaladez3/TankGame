@@ -37,13 +37,13 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(230, 260, 91, 31));
+        label->setGeometry(QRect(70, 470, 91, 51));
         QFont font;
         font.setPointSize(16);
         label->setFont(font);
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(40, 460, 81, 51));
+        label_2->setGeometry(QRect(910, 470, 91, 51));
         label_2->setFont(font);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -62,8 +62,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Drag Me!", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "[...]--", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "[...]--", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", " --[...]", nullptr));
     } // retranslateUi
 
 };
