@@ -16,51 +16,60 @@ MainWindow::~MainWindow()
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
-    float y = ui->label_2->y();
-        float x = ui->label_2->x();
+
         float y_inc = 0.0;
         float x_inc = 0.0;
 
-        float y2 = ui->label->y();
-        float x2 = ui->label->x();
-        float y2_inc = 0.0;
-        float x2_inc = 0.0;
+        float y1 = ui->label->y();
+        float x1 = ui->label->x();
+
+        float y2 = ui->label_2->y();
+        float x2 = ui->label_2->x();
+
+        bool player = false;
 
         if (event->key() == Qt::Key_Up) {
             y_inc = -5.0f;
+            player = true;
         }
 
         if (event->key() == Qt::Key_Down) {
             y_inc = +5.0f;
+            player = true;
         }
 
         if (event->key() == Qt::Key_Left) {
             x_inc = -5.0f;
+            player = true;
         }
 
         if (event->key() == Qt::Key_Right) {
             x_inc = +5.0f;
+            player = true;
         }
 
+        ui->label_2->move(QPoint(x2 + x_inc, y2 + y_inc));
 
-        if (event->key() == Qt::Key_W) {
-            y2_inc = -5.0f;
+        if(player == false)
+        {
+            if (event->key() == Qt::Key_W) {
+                y_inc = -5.0f;
+            }
+
+            if (event->key() == Qt::Key_S) {
+                y_inc = +5.0f;
+            }
+
+            if (event->key() == Qt::Key_A) {
+                x_inc = -5.0f;
+            }
+
+            if (event->key() == Qt::Key_D) {
+                x_inc = +5.0f;
+            }
+
+            ui->label->move(QPoint(x1 + x_inc, y1 + y_inc));
         }
-
-        if (event->key() == Qt::Key_S) {
-            y2_inc = +5.0f;
-        }
-
-        if (event->key() == Qt::Key_A) {
-            x2_inc = -5.0f;
-        }
-
-        if (event->key() == Qt::Key_D) {
-            x2_inc = +5.0f;
-        }
-
-        ui->label_2->move(QPoint(x + x_inc, y + y_inc));
-        ui->label->move(QPoint(x2 + x2_inc, y2 + y2_inc));
 }
 
 void MainWindow::mousePressEvent(QMouseEvent *event)
