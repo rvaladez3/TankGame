@@ -17,9 +17,9 @@ public:
 
     void keyPressEvent(QKeyEvent *);
 
-    //void mousePressEvent(QMouseEvent *);
+//    void mousePressEvent(QMouseEvent *);
 
-    void mouseMoveEvent(QMouseEvent *);
+//    void mouseMoveEvent(QMouseEvent *);
 
 private:
     Ui::MainWindow *ui;
