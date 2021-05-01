@@ -31,11 +31,11 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     ui->label_2->move(QPoint(x, y + y_inc));
 }
 
-void MainWindow::mousePressEvent(QMouseEvent *event)
-{
-    lastX = event->x();
-    lastY = event->y();
-}
+//void MainWindow::mousePressEvent(QMouseEvent *event)
+//{
+//    lastX = event->x();
+//    lastY = event->y();
+//}
 
 void MainWindow::mouseMoveEvent(QMouseEvent *event)
 {

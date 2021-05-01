@@ -17,7 +17,7 @@ public:
 
     void keyPressEvent(QKeyEvent *);
 
-    void mousePressEvent(QMouseEvent *);
+    //void mousePressEvent(QMouseEvent *);
 
     void mouseMoveEvent(QMouseEvent *);
 
