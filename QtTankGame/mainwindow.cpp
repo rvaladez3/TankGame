@@ -1,6 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QKeyEvent>
+#include "Projectile.h"
+#include <QDebug>
+#include <QGraphicsScene>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -27,6 +31,8 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
         bool player = false;
 
+
+
         //label_2
         if (event->key() == Qt::Key_Up && y2 > 10) {
             y_inc = -5.0f;
@@ -46,6 +52,13 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         if (event->key() == Qt::Key_Right && x2 < 1000) {
             x_inc = +5.0f;
             player = true;
+        }
+
+        if(event->key() == Qt::Key_Space){
+            Projectile * projectile = new Projectile();
+            qDebug() <<"Projectile created";
+            projectile->setPos(ui->label_2->x(),ui->label_2->y());
+            scene->addItem(projectile);
         }
 
         ui->label_2->move(QPoint(x2 + x_inc, y2 + y_inc));
