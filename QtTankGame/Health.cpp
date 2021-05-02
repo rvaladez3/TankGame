@@ -23,7 +23,12 @@ void Health::decrease(int t1, int t2)
 
 
 
-int Health::getHealth()
+int Health::getHealthT1()
 {
-    return
+    return healthT1;
+}
+
+int Health::getHealthT2()
+{
+    return healthT2;
 }

@@ -11,13 +11,12 @@ public:
     void decrease(int t1, int t2);
 
     //get health for player
-    int getHealth();
+    int getHealthT1();
+    int getHealthT2();
 
 private:
     int healthT1;
     int healthT2;
-
-
 };
 
 #endif // HEALTH_H
