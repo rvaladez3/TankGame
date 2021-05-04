@@ -9,6 +9,8 @@ public:
     void keyPressEvent(QKeyEvent * event);
 };
 
+
+
 //#include <QMainWindow>
 
 //QT_BEGIN_NAMESPACE
@@ -25,9 +27,9 @@ public:
 
 //    void keyPressEvent(QKeyEvent *);
 
-////    void mousePressEvent(QMouseEvent *);
+//    void mousePressEvent(QMouseEvent *);
 
-////    void mouseMoveEvent(QMouseEvent *);
+//    void mouseMoveEvent(QMouseEvent *);
 
 //private:
 //    Ui::MainWindow *ui;

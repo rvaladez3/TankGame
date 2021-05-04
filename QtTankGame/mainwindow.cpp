@@ -25,12 +25,12 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
        setPos(x()+10,y());
     }
 
-    if(event->key() == Qt::Key_Space){
-        Projectile * projectile = new Projectile();
-        qDebug() <<"Projectile created";
-        projectile->setPos(x(),y());
-        scene->addItem(projectile);
-    }
+//    if(event->key() == Qt::Key_Space){
+//        Projectile * projectile = new Projectile();
+//        qDebug() <<"Projectile created";
+//        projectile->setPos(x(),y());
+//        scene->addItem(projectile);
+//    }
 
 }
 
@@ -116,29 +116,29 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 //        }
 //}
 
-////void MainWindow::mousePressEvent(QMouseEvent *event)
-////{
-////    lastX = event->x();
-////    lastY = event->y();
-////}
+//void MainWindow::mousePressEvent(QMouseEvent *event)
+//{
+//    lastX = event->x();
+//    lastY = event->y();
+//}
 
-////void MainWindow::mouseMoveEvent(QMouseEvent *event)
-////{
-////    float xAtRelease = event->x();
-////    float yAtRelease = event->y();
+//void MainWindow::mouseMoveEvent(QMouseEvent *event)
+//{
+//    float xAtRelease = event->x();
+//    float yAtRelease = event->y();
 
-////    float dx = xAtRelease - lastX;
-////    float dy = yAtRelease - lastY;
+//    float dx = xAtRelease - lastX;
+//    float dy = yAtRelease - lastY;
 
-////    float x = ui->label->x();
-////    float y = ui->label->y();
+//    float x = ui->label->x();
+//    float y = ui->label->y();
 
-////    ui->label->move(QPoint(x + dx, y + dy));
+//    ui->label->move(QPoint(x + dx, y + dy));
 
-////    lastX = event->x();
-////    lastY = event->y();
+//    lastX = event->x();
+//    lastY = event->y();
 
-////}
+//}
 
 
 

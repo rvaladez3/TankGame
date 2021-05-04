@@ -7,6 +7,7 @@
 #include <QApplication>
 #include "mainwindow.h"
 #include <QGraphicsView>
+#include "health.h"
 
 int main(int argc, char *argv[])
 {
