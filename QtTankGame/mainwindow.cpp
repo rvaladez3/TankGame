@@ -4,24 +4,25 @@
 #include "Projectile.h"
 #include <QDebug>
 #include <QGraphicsScene>
-
+#include <QGraphicsView>
 
 //new code
+
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
-    if (event->key() == Qt::Key_Up) {
-       setPos(x(),y()-10);
+    if (event->key() == Qt::Key_Up && pos().y() > 0) {
+        setPos(x(),y()-10);
     }
 
-    if (event->key() == Qt::Key_Down) {
+    if (event->key() == Qt::Key_Down && pos().y() < 600) {
        setPos(x(),y()+10);
     }
 
-    if (event->key() == Qt::Key_Left) {
+    if (event->key() == Qt::Key_Left && pos().x() > 0) {
        setPos(x()-10,y());
     }
 
-    if (event->key() == Qt::Key_Right) {
+    if (event->key() == Qt::Key_Right && pos().x() < 600){
        setPos(x()+10,y());
     }
 

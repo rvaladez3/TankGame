@@ -1,16 +1,16 @@
-//#ifndef HEALTH_H
-//#define HEALTH_H
+#ifndef HEALTH_H
+#define HEALTH_H
 
-//#include <QGraphicsTextItem>
+#include <QGraphicsTextItem>
 
-//class Health: public QGraphicsTextItem{
-//public:
-//    Health(QGraphicsItem * parent=0);
-//    void decrease();
-//    int getHealth();
-//private:
-//    int health;
-//};
+class Health: public QGraphicsTextItem{
+public:
+    Health(QGraphicsItem * parent=0);
+    void decrease();
+    int getHealth();
+private:
+    int health;
+};
 
 
-//#endif // HEALTH_H
+#endif // HEALTH_H

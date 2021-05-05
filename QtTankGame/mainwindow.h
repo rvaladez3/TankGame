@@ -4,9 +4,12 @@
 //new code
 #include <QGraphicsRectItem>
 
+
 class MainWindow : public QGraphicsRectItem{
+
 public:
     void keyPressEvent(QKeyEvent * event);
+
 };
 
 

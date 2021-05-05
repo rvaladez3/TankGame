@@ -10,11 +10,13 @@ CONFIG += c++11
 
 SOURCES += \
     Projectile.cpp \
+    health.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     Projectile.h \
+    health.h \
     mainwindow.h
 
 FORMS += \

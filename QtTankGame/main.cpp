@@ -5,7 +5,6 @@
 #include <QDebug>
 #include <QGraphicsScene>
 #include <QApplication>
-#include "mainwindow.h"
 #include <QGraphicsView>
 #include "health.h"
 
@@ -13,16 +12,15 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     QGraphicsScene * scene = new QGraphicsScene();
-    MainWindow * rect = new MainWindow();
+    MainWindow * player1 = new MainWindow();
 
+    player1->setRect(0,0,100,100);
 
-    rect->setRect(0,0,100,100);
-
-    scene->addItem(rect);
+    scene->addItem(player1);
 
     //make item focusable
-    rect->setFlag(QGraphicsItem::ItemIsFocusable);
-    rect->setFocus();
+    player1->setFlag(QGraphicsItem::ItemIsFocusable);
+    player1->setFocus();
 
 
     QGraphicsView * view = new QGraphicsView(scene);
@@ -30,5 +28,14 @@ int main(int argc, char *argv[])
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     view->show();
+    //fixed scene
+    view->setFixedSize(700,700);
+    scene->setSceneRect(0,0,700,700);
+
+    //left side
+    player1->setPos(view->width()-view->width(),view->height()/2);
+    //right side
+    //player1->setPos(view->width() - player1->rect().width(),view->height()/2);
+
     return a.exec();
 }
