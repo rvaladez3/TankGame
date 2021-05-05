@@ -4,12 +4,15 @@
 #include <QGraphicsRectItem>
 #include <QObject>
 
-class Projectile: public QGraphicsRectItem, public QObject{
+class Projectile: public QObject, public QGraphicsRectItem{
     Q_OBJECT
 public:
     Projectile();
 public slots:
     void move();
+
+
+
 
 };
 

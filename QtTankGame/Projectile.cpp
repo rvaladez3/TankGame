@@ -1,16 +1,18 @@
 #include "Projectile.h"
-#include <Qtimer>
+#include <QTimer>
 
-Projectile::Projectile(){
-    setRect(0,0,10,50);
 
+
+Projectile::Projectile()
+{
+    setRect(0,0,50,10);
     QTimer * timer = new QTimer();
-    connect(timer,SIGNAL(timeout()),this,SLOT(move()));
+    connect(timer, SIGNAL(timeout()), this, SLOT(move()));
 
     timer->start(50);
 }
 
-void Projectile::move(){
-
+void Projectile::move()
+{
     setPos(x()+10,y());
 }

@@ -25,12 +25,12 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
        setPos(x()+10,y());
     }
 
-//    if(event->key() == Qt::Key_Space){
-//        Projectile * projectile = new Projectile();
-//        qDebug() <<"Projectile created";
-//        projectile->setPos(x(),y());
-//        scene->addItem(projectile);
-//    }
+    if(event->key() == Qt::Key_Space){
+        Projectile * bullet = new Projectile();
+        bullet->setPos(x(),y());
+        scene()->addItem(bullet);
+        //qDebug() << "Bullet Created";
+    }
 
 }
 
