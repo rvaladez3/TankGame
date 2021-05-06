@@ -24,7 +24,7 @@ void Projectile::move()
 
     //if (a->getActive() == 1)
     //{
-        EnemyHealth eh;
+        //EnemyHealth eh;
 
         setPos(x()+10,y());
 
@@ -32,13 +32,13 @@ void Projectile::move()
 
         for (int i=0, n=coll_items.size(); i<n; i++)
         {
-           // qDebug() << (Player*)*(coll_items[i]->getHealth()) << endl;
+           qDebug() << ((Player*)(coll_items[i])->getHealth()) << endl;
             if (typeid(*(coll_items[i])) == typeid(Player))
             {
 
                 //*coll_items[i]->decreaseHealth();
-                eh.decrease();
-                qDebug() << eh.getHealth() << endl;
+                //eh.decrease();
+                //qDebug() << eh.getHealth() << endl;
                 scene()->removeItem(this);
                 delete this;
 
