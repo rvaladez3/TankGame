@@ -17,6 +17,7 @@ SOURCES += \
     player.cpp
 
 HEADERS += \
+    ActivePlayer.h \
     Enemy.h \
     EnemyHealth.h \
     Health.h \
