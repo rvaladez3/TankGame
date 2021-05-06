@@ -2,6 +2,7 @@
 #include <QFont>
 #include<QGraphicsItem>
 
+static int health;
 
 EnemyHealth::EnemyHealth(QGraphicsItem *parent): QGraphicsTextItem(parent)
 {

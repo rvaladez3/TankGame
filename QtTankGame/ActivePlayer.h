@@ -4,7 +4,7 @@
 class ActivePlayer
 {
 
-    int active;
+    static int active;
 
 public:
 
