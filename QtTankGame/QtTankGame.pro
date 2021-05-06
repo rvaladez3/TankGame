@@ -19,6 +19,7 @@ SOURCES += \
 HEADERS += \
     Enemy.h \
     EnemyHealth.h \
+    Health.h \
     Projectile.h \
     health.h \
     player.h

@@ -1,7 +1,8 @@
 #include "Projectile.h"
+#include "player.h"
 #include <QTimer>
 #include <QGraphicsScene>
-
+#include <QList>
 
 Projectile::Projectile()
 {
@@ -17,6 +18,20 @@ void Projectile::move()
 {
     //deletes object in the case that they're out of the object range
     setPos(x()+10,y());
+
+    QList<QGraphicsItem *> coll_items = collidingItems();
+    for (int i=0, n=coll_items.size(); i<n; i++)
+    {
+        if (typeid(*(coll_items[i])) == typeid(Player))
+        {
+            /*
+            if()
+            scene()->removeItem(this);
+            delete this;
+            */
+        }
+    }
+
     if (pos().x() < 0 || pos().x() > 700){
         scene()->removeItem(this);
         delete this;
