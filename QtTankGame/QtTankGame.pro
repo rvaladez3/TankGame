@@ -25,7 +25,8 @@ HEADERS += \
     Projectile.h \
     game.h \
     health.h \
-    player.h
+    player.h \
+    wall.h
 
 FORMS += \
     player.ui
