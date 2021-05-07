@@ -46,6 +46,9 @@ Game::Game(QWidget *parent)
     scene->addItem((player2->h));
     (player2->h)->setPos(540,0);
 
+    //set inital focus
+    player1->setFocus();
+
     show();
 }
 

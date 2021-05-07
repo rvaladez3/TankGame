@@ -35,7 +35,7 @@ void Projectile::move()
 {
     if (game->active == 1)
     {
-        setPos(x(),y()+300);
+        setPos(x()+10,y());
 
         QList<QGraphicsItem *> coll_items = collidingItems();
 
