@@ -49,6 +49,15 @@ void Projectile::move()
                 delete this;
                 game->swap();
             }
+            if (typeid(*(coll_items[i])) == typeid(Wall))
+            {
+                //((Player)(coll_items[i])).decrease();
+                //eh.decrease();
+                //qDebug() << eh.getHealth() << endl;
+                scene()->removeItem(this);
+                delete this;
+                game->swap();
+            }
         }
 
         if (pos().x() < 0 || pos().x() > 700 || pos().y() < 0 || pos().y() > 700){
@@ -71,6 +80,15 @@ void Projectile::move()
             if (typeid(*(coll_items[i])) == typeid(Player))
             {
                 game->player1->decrease();
+                scene()->removeItem(this);
+                delete this;
+                game->swap();
+            }
+            if (typeid(*(coll_items[i])) == typeid(Wall))
+            {
+                //((Player)(coll_items[i])).decrease();
+                //eh.decrease();
+                //qDebug() << eh.getHealth() << endl;
                 scene()->removeItem(this);
                 delete this;
                 game->swap();
