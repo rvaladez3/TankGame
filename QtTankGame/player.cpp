@@ -38,7 +38,8 @@ void Player::keyPressEvent(QKeyEvent *event)
     }
 
     if(event->key() == Qt::Key_Space){
-        Projectile * bullet = new Projectile();
+        int velocity = 40;
+        Projectile * bullet = new Projectile(velocity);
         bullet->setPos(x(),y());
         scene()->addItem(bullet);
     }

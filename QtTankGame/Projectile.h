@@ -7,7 +7,7 @@
 class Projectile: public QObject, public QGraphicsRectItem{
     Q_OBJECT
 public:
-    Projectile();
+    Projectile(int);
 public slots:
     void move();
 

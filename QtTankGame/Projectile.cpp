@@ -11,8 +11,12 @@
 
 extern Game * game;
 
-Projectile::Projectile()
+int velocity;
+
+Projectile::Projectile(int v)
 {
+    velocity = v;
+
     if (game->active == 1)
         setRect(100,0,50,10);
 
@@ -28,7 +32,6 @@ Projectile::Projectile()
 
 void Projectile::move()
 {
-
 
     if (game->active == 1)
     {
@@ -102,4 +105,14 @@ void Projectile::move()
         }
 
     }
+
+    velocity--;
+    if (velocity < 1)
+    {
+        scene()->removeItem(this);
+        delete this;
+        game->swap();
+    }
+
+
 }
