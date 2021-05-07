@@ -27,7 +27,7 @@ void Health::decrease(){
         setPlainText(QString("Player1 HP: \n") + QString::number(health));
     else if (id == 2)
         setPlainText(QString("Player2 HP: \n") + QString::number(health));
-    qDebug() << health << Qt::endl;
+    //qDebug() << health << Qt::endl;
     //}
 }
 
@@ -46,6 +46,6 @@ void Health::setID(int num)
     else if (id == 2)
         setPlainText(QString("Player2 HP: \n") + QString::number(health));
 
-    qDebug() << "ID after setting = " << id << Qt::endl;
+    //qDebug() << "ID after setting = " << id << Qt::endl;
 }
 

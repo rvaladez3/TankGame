@@ -2,7 +2,6 @@
 #include "game.h"
 #include "player.h"
 #include "Health.h"
-#include "EnemyHealth.h"
 
 #include <QTimer>
 #include <QGraphicsScene>
@@ -23,16 +22,15 @@ Projectile::Projectile(int v)
     if (game->active == 2)
         setRect(-50,0,50,10);
 
-        QTimer * timer = new QTimer();
-        connect(timer, SIGNAL(timeout()), this, SLOT(move()));
+    QTimer * timer = new QTimer();
+    connect(timer, SIGNAL(timeout()), this, SLOT(move()));
 
-        timer->start(50);
+    timer->start(50);
 
 }
 
 void Projectile::move()
 {
-
     if (game->active == 1)
     {
         setPos(x()+10,y());
@@ -41,22 +39,24 @@ void Projectile::move()
 
         for (int i=0, n=coll_items.size(); i<n; i++)
         {
-           qDebug() << (Player(coll_items[i])).getHealth() << Qt::endl;
+            //qDebug() << (Player(coll_items[i])).getHealth() << Qt::endl;
             if (typeid(*(coll_items[i])) == typeid(Player))
             {
                 game->player2->decrease();
-                //((Player)(coll_items[i])).decrease();
-                //eh.decrease();
-                //qDebug() << eh.getHealth() << endl;
+
                 scene()->removeItem(this);
                 delete this;
-                game->swap();
+
+                if (game->player2->getHealth() <= 0)
+                {
+                    game->GameOver(1);
+                    break;
+                }
+                else
+                    game->swap();
             }
             if (typeid(*(coll_items[i])) == typeid(Wall))
             {
-                //((Player)(coll_items[i])).decrease();
-                //eh.decrease();
-                //qDebug() << eh.getHealth() << endl;
                 scene()->removeItem(this);
                 delete this;
                 game->swap();
@@ -79,19 +79,23 @@ void Projectile::move()
 
         for (int i=0, n=coll_items.size(); i<n; i++)
         {
-           qDebug() << (Player(coll_items[i])).getHealth() << Qt::endl;
+            //qDebug() << (Player(coll_items[i])).getHealth() << Qt::endl;
             if (typeid(*(coll_items[i])) == typeid(Player))
             {
                 game->player1->decrease();
                 scene()->removeItem(this);
                 delete this;
-                game->swap();
+
+                if (game->player1->getHealth() <= 0)
+                {
+                    game->GameOver(2);
+                    break;
+                }
+                else
+                    game->swap();
             }
             if (typeid(*(coll_items[i])) == typeid(Wall))
             {
-                //((Player)(coll_items[i])).decrease();
-                //eh.decrease();
-                //qDebug() << eh.getHealth() << endl;
                 scene()->removeItem(this);
                 delete this;
                 game->swap();
@@ -113,6 +117,4 @@ void Projectile::move()
         delete this;
         game->swap();
     }
-
-
 }
