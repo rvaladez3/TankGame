@@ -23,14 +23,14 @@ Game::Game(QWidget *parent)
     setFixedSize(700,700);
 
     //player 1
-    player1 = new Player();
+    player1 = new Player(0, 1);
     player1->setRect(0,0,100,100);
     //left side
     player1->setPos(0,350);
     scene->addItem(player1);
 
     //player2
-    player2 = new Player();
+    player2 = new Player(0, 2);
     player2->setRect(0,0,100,100);
     player2->setPos(600,350);
     scene->addItem(player2);
@@ -40,17 +40,15 @@ Game::Game(QWidget *parent)
     player2->setFlag(QGraphicsItem::ItemIsFocusable);
 
 
-    /*
+
     //health
-    health = new Health();
-    scene->addItem(health);
-    health->setPos(0,0);
+    //health = new Health();
+    scene->addItem((player1->h));
+    (player1->h)->setPos(0,0);
 
     //enemyhealth
-    enemyhealth = new EnemyHealth();
-    scene->addItem(enemyhealth);
-    enemyhealth->setPos(540,0);
-    */
+    scene->addItem((player2->h));
+    (player2->h)->setPos(540,0);
 
 
 

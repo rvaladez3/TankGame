@@ -12,13 +12,11 @@
 
 extern Game * game;
 
-static int count;
 int player_num;
-Health* h;
 
-Player::Player(QGraphicsItem *parent)
+Player::Player(QGraphicsItem *parent, int num)
 {
-    spawn();
+    spawn(num);
 }
 
 void Player::keyPressEvent(QKeyEvent *event)
@@ -47,11 +45,12 @@ void Player::keyPressEvent(QKeyEvent *event)
 }
 
 
-void Player::spawn()
+void Player::spawn(int num)
 {
-    count++;
-    player_num = count;
+    //count++;
+    player_num = num;
     h = new Health();
+    h->setID(num);
 }
 
 int Player::getHealth()

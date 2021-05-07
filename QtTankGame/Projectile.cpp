@@ -32,7 +32,6 @@ void Projectile::move()
 
     if (game->active == 1)
     {
-
         setPos(x()+10,y());
 
         QList<QGraphicsItem *> coll_items = collidingItems();
@@ -62,7 +61,6 @@ void Projectile::move()
 
     if (game->active == 2)
     {
-
         setPos(x()-10,y());
 
         QList<QGraphicsItem *> coll_items = collidingItems();
@@ -72,10 +70,7 @@ void Projectile::move()
            qDebug() << (Player(coll_items[i])).getHealth() << Qt::endl;
             if (typeid(*(coll_items[i])) == typeid(Player))
             {
-                game->player2->decrease();
-                //((Player)(coll_items[i])).decrease();
-                //eh.decrease();
-                //qDebug() << eh.getHealth() << endl;
+                game->player1->decrease();
                 scene()->removeItem(this);
                 delete this;
                 game->swap();
