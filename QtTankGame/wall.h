@@ -4,7 +4,7 @@
 
 
 class Wall: public QObject, public QGraphicsLineItem{
-    QObject;
+    Q_OBJECT;
 public:
   Wall(QGraphicsItem * parent = 0);
 

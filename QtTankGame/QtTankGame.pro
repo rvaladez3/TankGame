@@ -15,7 +15,8 @@ SOURCES += \
     game.cpp \
     health.cpp \
     main.cpp \
-    player.cpp
+    player.cpp \
+    wall.cpp
 
 HEADERS += \
     Enemy.h \
