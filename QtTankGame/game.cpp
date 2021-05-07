@@ -1,5 +1,4 @@
 #include "game.h"
-#include "ui_mainwindow.h"
 #include "player.h"
 #include <QKeyEvent>
 #include "Projectile.h"
@@ -55,4 +54,12 @@ Game::Game(QWidget *parent)
     player2->setFocus();
 
     show();
+}
+
+void Game::swap()
+{
+    if (active == 1)
+        active = 2;
+    else
+        active = 1;
 }
