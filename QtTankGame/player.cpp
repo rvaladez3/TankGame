@@ -1,13 +1,17 @@
 #include "player.h"
-#include <QKeyEvent>
+#include "game.h"
+#include "Enemy.h"
+#include "Health.h"
 #include "Projectile.h"
+
+#include <QKeyEvent>
 #include <QDebug>
 #include <QGraphicsScene>
 #include <QGraphicsView>
-#include "Enemy.h"
-#include "Health.h"
 
-//new code
+
+extern Game * game;
+
 static int count;
 int player_num;
 Health* h;
@@ -15,7 +19,6 @@ Health* h;
 Player::Player(QGraphicsItem *parent)
 {
     spawn();
-    h = new Health();
 }
 
 void Player::keyPressEvent(QKeyEvent *event)
@@ -47,7 +50,8 @@ void Player::keyPressEvent(QKeyEvent *event)
 void Player::spawn()
 {
     count++;
-    player_num=count;
+    player_num = count;
+    h = new Health();
 }
 
 int Player::getHealth()

@@ -40,6 +40,7 @@ Game::Game(QWidget *parent)
     player2->setFlag(QGraphicsItem::ItemIsFocusable);
 
 
+    /*
     //health
     health = new Health();
     scene->addItem(health);
@@ -49,9 +50,9 @@ Game::Game(QWidget *parent)
     enemyhealth = new EnemyHealth();
     scene->addItem(enemyhealth);
     enemyhealth->setPos(540,0);
+    */
 
 
-    player2->setFocus();
 
     show();
 }
@@ -59,7 +60,14 @@ Game::Game(QWidget *parent)
 void Game::swap()
 {
     if (active == 1)
+    {
         active = 2;
+        player2->setFocus();
+    }
     else
+    {
         active = 1;
+        player1->setFocus();
+    }
+
 }
