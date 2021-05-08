@@ -8,7 +8,8 @@
 #include "Enemy.h"
 
 //new code
-static int player_num;
+static int count;
+int player_num;
 Player::Player(QGraphicsItem *parent)
 {
     spawn();
@@ -45,7 +46,8 @@ void Player::keyPressEvent(QKeyEvent *event)
 
 void Player::spawn()
 {
-    player_num++;
+    count++;
+    player_num=count;
 //    Enemy * enemy = new Enemy();
 //    scene()->addItem(enemy);
 }
