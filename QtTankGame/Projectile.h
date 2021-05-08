@@ -4,7 +4,7 @@
 #include <QGraphicsRectItem>
 #include <QObject>
 
-class Projectile: public QObject, public QGraphicsRectItem{
+class Projectile: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
 public:
     Projectile(int);

@@ -17,10 +17,12 @@ Projectile::Projectile(int v)
     velocity = v;
 
     if (game->active == 1)
-        setRect(100,0,50,10);
+      setPixmap((QPixmap(":/Images/projectile.png")));
+    setPos(x(),y()+90);
 
     if (game->active == 2)
-        setRect(-50,0,50,10);
+      setPixmap((QPixmap(":/Images/projectile.png")));
+    setPos(x(),y()+90);
 
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
@@ -33,7 +35,7 @@ void Projectile::move()
 {
     if (game->active == 1)
     {
-        setPos(x()+10,y());
+        setPos(x(),y()+300);
 
         QList<QGraphicsItem *> coll_items = collidingItems();
 

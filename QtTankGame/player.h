@@ -2,12 +2,12 @@
 #define PLAYER_H
 
 //new code
-#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
 #include <QObject>
 #include "Health.h"
 
 
-class Player: public QObject, public QGraphicsRectItem{
+class Player: public QObject, public QGraphicsPixmapItem{
 
     Q_OBJECT
 public:

@@ -1,4 +1,5 @@
 #include "game.h"
+#include <QBrush>
 
 
 
@@ -11,6 +12,7 @@ Game::Game(QWidget *parent)
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
 
+
     setFixedSize(700,700);
 
     wall = new Wall();
@@ -19,15 +21,15 @@ Game::Game(QWidget *parent)
 
     //player 1
     player1 = new Player(0, 1);
-    player1->setRect(0,0,100,100);
+    player1->setPixmap((QPixmap(":/Images/player.png")));
     //left side
     player1->setPos(0,350);
     scene->addItem(player1);
 
     //player2
     player2 = new Player(0, 2);
-    player2->setRect(0,0,100,100);
-    player2->setPos(600,350);
+    player2->setPixmap((QPixmap(":/Images/enemy.png")));
+    player2->setPos(450,350);
     scene->addItem(player2);
 
     //make item focusable
