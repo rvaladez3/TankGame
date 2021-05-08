@@ -10,7 +10,6 @@ public:
   int w, x, y, z;
 
   void createline();
-  int w,x,y,z;
 };
 
 #endif // WALL_H

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include "game.h"
 #include <QBrush>
 #include <QTimer>
