@@ -12,6 +12,7 @@ SOURCES += \
     Enemy.cpp \
     EnemyHealth.cpp \
     Projectile.cpp \
+    game.cpp \
     health.cpp \
     main.cpp \
     player.cpp
@@ -22,6 +23,7 @@ HEADERS += \
     EnemyHealth.h \
     Health.h \
     Projectile.h \
+    game.h \
     health.h \
     player.h
 

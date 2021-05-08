@@ -16,9 +16,10 @@ Health::Health(QGraphicsItem *parent): QGraphicsTextItem(parent)
 void Health::decrease(){
     health = health - 20;
     setPlainText(QString("Player1 HP: ") + QString::number(health));
-
+    qDebug() << health << Qt::endl;
 }
 
 int Health::getHealth(){
     return health;
 }
+

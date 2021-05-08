@@ -1,4 +1,5 @@
 #include "Projectile.h"
+#include "game.h"
 #include "player.h"
 #include "Health.h"
 #include "EnemyHealth.h"
@@ -7,6 +8,8 @@
 #include <QGraphicsScene>
 #include <QList>
 #include <QDebug>
+
+extern Game * game;
 
 Projectile::Projectile()
 {
@@ -32,11 +35,11 @@ void Projectile::move()
 
         for (int i=0, n=coll_items.size(); i<n; i++)
         {
-           qDebug() << (Player(coll_items[i])).getHealth() << Qt::endl;
+           //qDebug() << (Player(coll_items[i])).getHealth() << Qt::endl;
             if (typeid(*(coll_items[i])) == typeid(Player))
             {
-
-                (Player(coll_items[i])).decreaseHealth();
+                game->health->decrease();
+                //(Player(coll_items[i])).decreaseHealth();
                 //eh.decrease();
                 //qDebug() << eh.getHealth() << endl;
                 scene()->removeItem(this);
