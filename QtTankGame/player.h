@@ -1,15 +1,17 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef PLAYER_H
+#define PLAYER_H
 
 //new code
 #include <QGraphicsRectItem>
+#include <QObject>
 
-
-class MainWindow : public QGraphicsRectItem{
-
+class Player: public QObject, public QGraphicsRectItem{
+    Q_OBJECT
 public:
+    Player(QGraphicsItem * parent = 0);
     void keyPressEvent(QKeyEvent * event);
-
+public slots:
+    void spawn();
 };
 
 
@@ -39,4 +41,4 @@ public:
 //    float lastX;
 //    float lastY;
 //};
-#endif // MAINWINDOW_H
+#endif // PLAYER_H

@@ -1,14 +1,20 @@
-#include "mainwindow.h"
+#include "player.h"
 #include "ui_mainwindow.h"
 #include <QKeyEvent>
 #include "Projectile.h"
 #include <QDebug>
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include "Enemy.h"
 
 //new code
+Player::Player(QGraphicsItem *parent)
+{
+    spawn();
+}
 
-void MainWindow::keyPressEvent(QKeyEvent *event)
+
+void Player::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Up && pos().y() > 0) {
         setPos(x(),y()-10);
@@ -30,8 +36,14 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         Projectile * bullet = new Projectile();
         bullet->setPos(x(),y());
         scene()->addItem(bullet);
-        //qDebug() << "Bullet Created";
+
     }
+
+}
+
+
+void Player::spawn()
+{
 
 }
 

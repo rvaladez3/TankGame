@@ -49,7 +49,7 @@ public:
         label_2->setFont(font);
         line = new QFrame(centralwidget);
         line->setObjectName(QString::fromUtf8("line"));
-        line->setGeometry(QRect(550, 370, 20, 141));
+        line->setGeometry(QRect(530, 370, 20, 141));
         line->setFrameShape(QFrame::VLine);
         line->setFrameShadow(QFrame::Sunken);
         MainWindow->setCentralWidget(centralwidget);
