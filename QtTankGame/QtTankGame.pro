@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     Enemy.cpp \
+    EnemyHealth.cpp \
     Projectile.cpp \
     health.cpp \
     main.cpp \
@@ -17,6 +18,7 @@ SOURCES += \
 
 HEADERS += \
     Enemy.h \
+    EnemyHealth.h \
     Projectile.h \
     health.h \
     player.h

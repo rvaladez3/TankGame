@@ -7,6 +7,7 @@
 #include <QApplication>
 #include <QGraphicsView>
 #include "health.h"
+#include "EnemyHealth.h"
 #include <QTimer>
 
 
@@ -26,6 +27,10 @@ int main(int argc, char *argv[])
 
     Health * health = new Health();
     scene->addItem(health);
+
+
+    EnemyHealth * enemyhealth = new EnemyHealth();
+    scene->addItem(enemyhealth);
 
 
     QGraphicsView * view = new QGraphicsView(scene);
