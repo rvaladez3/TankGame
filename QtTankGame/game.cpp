@@ -29,7 +29,7 @@ Game::Game(QWidget *parent)
     //player2
     player2 = new Player(0, 2);
     player2->setPixmap((QPixmap(":/Images/enemy.png")));
-    player2->setPos(450,350);
+    player2->setPos(600,350);
     scene->addItem(player2);
 
     //make item focusable

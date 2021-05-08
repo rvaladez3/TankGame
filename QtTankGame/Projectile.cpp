@@ -21,7 +21,7 @@ Projectile::Projectile(int v)
     setPos(x(),y()+90);
 
     if (game->active == 2)
-      setPixmap((QPixmap(":/Images/projectile.png")));
+      setPixmap((QPixmap(":/Images/projectileE.png")));
     setPos(x(),y()+90);
 
     QTimer * timer = new QTimer();
