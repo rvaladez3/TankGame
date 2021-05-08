@@ -15,9 +15,9 @@
 #include "wall.h"
 
 class Game: public QGraphicsView{
+    Q_OBJECT
 public:
     Game(QWidget * parent = 0);
-    void swap();
     void GameOver(int);
 
     QGraphicsScene * scene;
@@ -26,6 +26,10 @@ public:
     int active = 1;
     Health * health;
     Wall * wall;
+    QTimer * timer;
+
+public slots:
+    void swap();
 };
 
 

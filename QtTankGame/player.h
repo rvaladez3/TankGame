@@ -5,6 +5,8 @@
 #include <QGraphicsPixmapItem>
 #include <QObject>
 #include "Health.h"
+#include <QGraphicsRectItem>
+
 
 
 class Player: public QObject, public QGraphicsPixmapItem{

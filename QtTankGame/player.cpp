@@ -24,7 +24,7 @@ void Player::keyPressEvent(QKeyEvent *event)
         setPos(x(),y()-10);
     }
 
-    if (event->key() == Qt::Key_S && pos().y() < 600) {
+    if (event->key() == Qt::Key_S && pos().y() < 950) {
        setPos(x(),y()+10);
     }
 
@@ -32,7 +32,7 @@ void Player::keyPressEvent(QKeyEvent *event)
        setPos(x()-10,y());
     }
 
-    if (event->key() == Qt::Key_D && pos().x() < 600){
+    if (event->key() == Qt::Key_D && pos().x() < 1300){
        setPos(x()+10,y());
     }
 

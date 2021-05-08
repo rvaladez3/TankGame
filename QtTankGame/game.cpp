@@ -1,8 +1,6 @@
 #include "game.h"
 #include <QBrush>
 
-
-
 Game::Game(QWidget *parent)
 {
     scene = new QGraphicsScene();
@@ -10,7 +8,6 @@ Game::Game(QWidget *parent)
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-
 
 
     setFixedSize(700,700);
@@ -44,10 +41,16 @@ Game::Game(QWidget *parent)
 
     //enemyhealth
     scene->addItem((player2->h));
-    (player2->h)->setPos(540,0);
+    (player2->h)->setPos(550,0);
 
     //set inital focus
     player1->setFocus();
+
+
+    timer = new QTimer();
+    connect(timer, SIGNAL(timeout()), this, SLOT(swap()));
+
+    timer->start(5000);
 
     show();
 }
@@ -64,7 +67,7 @@ void Game::swap()
         active = 1;
         player1->setFocus();
     }
-
+    timer->start(5000);
 }
 
 void Game::GameOver(int id)
@@ -86,3 +89,4 @@ void Game::GameOver(int id)
 
     qDebug() << "Game Over message displayed" << Qt::endl;
 }
+
