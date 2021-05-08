@@ -65,7 +65,7 @@ void Projectile::move()
             }
         }
 
-        if (pos().x() < 0 || pos().x() > 1350 || pos().y() < 0 || pos().y() > 1050){
+        if (pos().x() > 1349){
             scene()->removeItem(this);
             delete this;
             game->swap();
@@ -104,7 +104,7 @@ void Projectile::move()
             }
         }
 
-        if (pos().x() < 0 || pos().x() > 1350 || pos().y() < 0 || pos().y() > 1050){
+        if (pos().x() < 0){
             scene()->removeItem(this);
             delete this;
             game->swap();
