@@ -13,6 +13,8 @@ class Player: public QObject, public QGraphicsRectItem{
 public:
     Player(QGraphicsItem * parent = 0);
     void keyPressEvent(QKeyEvent * event);
+    int getHealth();
+    void decrease();
 public slots:
     void spawn();
 

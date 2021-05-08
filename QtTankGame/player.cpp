@@ -1,5 +1,4 @@
 #include "player.h"
-#include "ui_mainwindow.h"
 #include <QKeyEvent>
 #include "Projectile.h"
 #include <QDebug>
@@ -11,10 +10,12 @@
 //new code
 static int count;
 int player_num;
+Health* h;
 
 Player::Player(QGraphicsItem *parent)
 {
     spawn();
+    h = new Health();
 }
 
 void Player::keyPressEvent(QKeyEvent *event)
@@ -47,7 +48,16 @@ void Player::spawn()
 {
     count++;
     player_num=count;
+}
 
+int Player::getHealth()
+{
+    return h->getHealth();
+}
+
+void Player::decrease()
+{
+    h->decrease();
 }
 
 
