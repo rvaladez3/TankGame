@@ -44,10 +44,12 @@ Game::Game(QWidget *parent)
     //health
     health = new Health();
     scene->addItem(health);
+    health->setPos(0,0);
 
     //enemyhealth
     enemyhealth = new EnemyHealth();
     scene->addItem(enemyhealth);
+    enemyhealth->setPos(540,0);
 
 
     player2->setFocus();

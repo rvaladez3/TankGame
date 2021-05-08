@@ -11,7 +11,7 @@ EnemyHealth::EnemyHealth(QGraphicsItem *parent): QGraphicsTextItem(parent)
     setPlainText(QString("Player2 HP: ") + QString::number(health));
     setDefaultTextColor(Qt::blue);
     setFont(QFont("times",16));
-    setPos(540,0);
+    //setPos(540,0);
 
 }
 

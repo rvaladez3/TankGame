@@ -11,7 +11,7 @@
 //new code
 static int count;
 int player_num;
-Health * h;
+
 Player::Player(QGraphicsItem *parent)
 {
     spawn();
@@ -47,16 +47,7 @@ void Player::spawn()
 {
     count++;
     player_num=count;
-    h = new Health();
 
 }
 
-int Player::getHealth(){
 
-    return h->getHealth();
-}
-
-void Player::decreaseHealth()
-{
-    h->decrease();
-}
