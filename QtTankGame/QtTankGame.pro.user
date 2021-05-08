@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.14.1, 2021-05-08T15:52:56. -->
+<!-- Written by QtCreator 4.14.1, 2021-05-09T11:43:33. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -294,9 +294,8 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">QtTankGame2</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/conno/Desktop/School/Spring_2021/OOP_CSE-165/Project/TankGame/TankGame/QtTankGame/QtTankGame.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/conno/Desktop/School/Spring_2021/OOP_CSE-165/Project/TankGame/TankGame/QtTankGame/QtTankGame.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/conno/Desktop/School/Spring_2021/OOP_CSE-165/Project/TankGame/QtTankGame/QtTankGame.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/conno/Desktop/School/Spring_2021/OOP_CSE-165/Project/TankGame/QtTankGame/QtTankGame.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>

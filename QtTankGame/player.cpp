@@ -40,9 +40,9 @@ void Player::keyPressEvent(QKeyEvent *event)
         int velocity = 40;
         Projectile * bullet = new Projectile(velocity);
         if (game->active == 1)
-            bullet->setPos(x()+150,y());
+            bullet->setPos(x()+100,y()+10);
         else
-            bullet->setPos(x()-200,y());
+            bullet->setPos(x()-50,y()+10);
         scene()->addItem(bullet);
     }
 }
