@@ -3,5 +3,6 @@
         <file>enemy.png</file>
         <file>player.png</file>
         <file>projectile.png</file>
+        <file>projectileE.png</file>
     </qresource>
 </RCC>
