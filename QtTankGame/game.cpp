@@ -70,15 +70,19 @@ void Game::swap()
 void Game::GameOver(int id)
 {
     scene->clear();
+    qDebug() << "Displaying Game Over message" << Qt::endl;
 
-    QString str = "Game Over!\nPlayer ";
-    str += ((char)(id + '0'));
-    str += " Wins!";
+
+    QString str;
+
+    if (id == 1)
+        str = "Game Over!\nPlayer 1 Wins!";
+    else
+        str = "Game Over!\nPlayer 2 Wins!";
 
     QGraphicsTextItem *text = scene->addText(str);
     //text->setTextWidth(300);
     text->setPos(300, 300);
 
     qDebug() << "Game Over message displayed" << Qt::endl;
-
 }
