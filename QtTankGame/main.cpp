@@ -19,9 +19,10 @@ int main(int argc, char *argv[])
     player1->setRect(0,0,100,100);
     scene->addItem(player1);
 
-    //make item focusable
-    player1->setFlag(QGraphicsItem::ItemIsFocusable);
-    player1->setFocus();
+
+    Player * player2 = new Player();
+    player2->setRect(0,0,100,100);
+    scene->addItem(player2);
 
     Health * health = new Health();
     scene->addItem(health);
@@ -39,8 +40,14 @@ int main(int argc, char *argv[])
     //left side
     player1->setPos(view->width()-view->width(),view->height()/2);
 
+    //QObject::connect(,SIGNAL(timeout()),,SLOT(spawn()));
     //right side
-    //player1->setPos(view->width() - player1->rect().width(),view->height()/2);
+    player2->setPos(view->width() - player1->rect().width(),view->height()/2);
+
+    //make item focusable
+    player1->setFlag(QGraphicsItem::ItemIsFocusable);
+    player2->setFlag(QGraphicsItem::ItemIsFocusable);
+    player2->setFocus();
 
 
     //spawn enemies

@@ -8,6 +8,7 @@
 #include "Enemy.h"
 
 //new code
+static int player_num;
 Player::Player(QGraphicsItem *parent)
 {
     spawn();
@@ -16,19 +17,19 @@ Player::Player(QGraphicsItem *parent)
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
-    if (event->key() == Qt::Key_Up && pos().y() > 0) {
+    if (event->key() == Qt::Key_W && pos().y() > 0) {
         setPos(x(),y()-10);
     }
 
-    if (event->key() == Qt::Key_Down && pos().y() < 600) {
+    if (event->key() == Qt::Key_S && pos().y() < 600) {
        setPos(x(),y()+10);
     }
 
-    if (event->key() == Qt::Key_Left && pos().x() > 0) {
+    if (event->key() == Qt::Key_A && pos().x() > 0) {
        setPos(x()-10,y());
     }
 
-    if (event->key() == Qt::Key_Right && pos().x() < 600){
+    if (event->key() == Qt::Key_D && pos().x() < 600){
        setPos(x()+10,y());
     }
 
@@ -44,7 +45,9 @@ void Player::keyPressEvent(QKeyEvent *event)
 
 void Player::spawn()
 {
-
+    player_num++;
+//    Enemy * enemy = new Enemy();
+//    scene()->addItem(enemy);
 }
 
 
