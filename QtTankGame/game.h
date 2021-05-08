@@ -7,6 +7,7 @@
 #include "player.h"
 #include "Health.h"
 #include "EnemyHealth.h"
+#include "wall.h"
 
 class Game: public QGraphicsView{
 public:
@@ -19,6 +20,7 @@ public:
     int active = 1;
     Health * health;
     EnemyHealth * enemyhealth;
+    Wall * wall;
 };
 
 

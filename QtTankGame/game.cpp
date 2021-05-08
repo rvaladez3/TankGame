@@ -6,9 +6,10 @@
 #include <QGraphicsScene>
 #include <QApplication>
 #include <QGraphicsView>
-#include "Health.h"
+#include "health.h"
 #include "EnemyHealth.h"
 #include <QTimer>
+#include "wall.h"
 
 
 Game::Game(QWidget *parent)
@@ -21,6 +22,10 @@ Game::Game(QWidget *parent)
 
 
     setFixedSize(700,700);
+
+    wall = new Wall();
+    scene->addItem(wall);
+    wall->setPos(350,350);
 
     //player 1
     player1 = new Player();
