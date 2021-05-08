@@ -6,6 +6,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include "Enemy.h"
+#include "Health.h"
 
 //new code
 static int count;
@@ -47,11 +48,15 @@ void Player::spawn()
     count++;
     player_num=count;
     h = new Health();
-//    Enemy * enemy = new Enemy();
-//    scene()->addItem(enemy);
+
 }
 
-int getHealth(){
+int Player::getHealth(){
 
     return h->getHealth();
+}
+
+void Player::decreaseHealth()
+{
+    h->decrease();
 }

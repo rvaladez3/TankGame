@@ -6,7 +6,7 @@
 #include <QGraphicsScene>
 #include <QApplication>
 #include <QGraphicsView>
-#include "health.h"
+#include "Health.h"
 #include "EnemyHealth.h"
 #include <QTimer>
 

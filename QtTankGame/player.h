@@ -12,6 +12,7 @@ class Player: public QObject, public QGraphicsRectItem{
     Q_OBJECT
 public:
     int getHealth();
+    void decreaseHealth();
     Player(QGraphicsItem * parent = 0);
     void keyPressEvent(QKeyEvent * event);
 public slots:

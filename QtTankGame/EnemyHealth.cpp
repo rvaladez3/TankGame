@@ -2,10 +2,10 @@
 #include <QFont>
 #include<QGraphicsItem>
 
-static int health;
 
 EnemyHealth::EnemyHealth(QGraphicsItem *parent): QGraphicsTextItem(parent)
 {
+
     //player starts with 100 hp
     health = 100;
     setPlainText(QString("Player2 HP: ") + QString::number(health));

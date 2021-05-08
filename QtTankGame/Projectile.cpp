@@ -32,11 +32,11 @@ void Projectile::move()
 
         for (int i=0, n=coll_items.size(); i<n; i++)
         {
-           qDebug() << ((Player*)(coll_items[i])->getHealth()) << endl;
+           qDebug() << (Player(coll_items[i])).getHealth() << Qt::endl;
             if (typeid(*(coll_items[i])) == typeid(Player))
             {
 
-                //*coll_items[i]->decreaseHealth();
+                (Player(coll_items[i])).decreaseHealth();
                 //eh.decrease();
                 //qDebug() << eh.getHealth() << endl;
                 scene()->removeItem(this);
