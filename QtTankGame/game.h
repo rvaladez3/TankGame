@@ -24,6 +24,7 @@ public:
     Player * player1;
     Player * player2;
     int active = 1;
+    int bulletExists = 0;
     Health * health;
     Wall * wall;
     QTimer * playerTimer;

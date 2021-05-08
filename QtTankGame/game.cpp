@@ -49,7 +49,7 @@ Game::Game(QWidget *parent)
     //set inital focus
     player1->setFocus();
 
-
+    //sets time limit for each turn
     playerTimer = new QTimer();
     connect(playerTimer, SIGNAL(timeout()), this, SLOT(swap()));
 

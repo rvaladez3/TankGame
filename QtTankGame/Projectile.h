@@ -9,7 +9,8 @@ class Projectile: public QObject, public QGraphicsPixmapItem{
 public:
     Projectile(int);
 public slots:
-    void move();
+    void move1();
+    void move2();
 
 
 };

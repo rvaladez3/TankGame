@@ -16,22 +16,29 @@ Projectile::Projectile(int v)
 {
     velocity = v;
 
+    QTimer * timer = new QTimer();
+
+    game->bulletExists = 1;
+
     if (game->active == 1)
-      setPixmap((QPixmap(":/Images/projectile.png")));
-    setPos(x(),y()+90);
+    {
+        setPixmap((QPixmap(":/Images/projectile.png")));
+        setPos(x(),y()+90);
+        connect(timer, SIGNAL(timeout()), this, SLOT(move1()));
+    }
 
     if (game->active == 2)
-      setPixmap((QPixmap(":/Images/projectileE.png")));
-    setPos(x(),y()+90);
-
-    QTimer * timer = new QTimer();
-    connect(timer, SIGNAL(timeout()), this, SLOT(move()));
+    {
+        setPixmap((QPixmap(":/Images/projectileE.png")));
+        setPos(x(),y()+90);
+        connect(timer, SIGNAL(timeout()), this, SLOT(move2()));
+    }
 
     timer->start(50);
 
 }
 
-void Projectile::move()
+void Projectile::move1()
 {
     if (game->active == 1)
     {
@@ -48,6 +55,7 @@ void Projectile::move()
 
                 scene()->removeItem(this);
                 delete this;
+                game->bulletExists = 0;
 
                 if (game->player2->getHealth() <= 0)
                 {
@@ -61,6 +69,7 @@ void Projectile::move()
             {
                 scene()->removeItem(this);
                 delete this;
+                game->bulletExists = 0;
                 game->swap();
             }
         }
@@ -68,11 +77,23 @@ void Projectile::move()
         if (pos().x() > 1349){
             scene()->removeItem(this);
             delete this;
+            game->bulletExists = 0;
             game->swap();
         }
-
     }
 
+    velocity--;
+    if (velocity < 1)
+    {
+        scene()->removeItem(this);
+        delete this;
+        game->bulletExists = 0;
+        game->swap();
+    }
+}
+
+void Projectile::move2()
+{
     if (game->active == 2)
     {
         setPos(x()-10,y());
@@ -87,6 +108,7 @@ void Projectile::move()
                 game->player1->decrease();
                 scene()->removeItem(this);
                 delete this;
+                game->bulletExists = 0;
 
                 if (game->player1->getHealth() <= 0)
                 {
@@ -100,6 +122,7 @@ void Projectile::move()
             {
                 scene()->removeItem(this);
                 delete this;
+                game->bulletExists = 0;
                 game->swap();
             }
         }
@@ -107,6 +130,7 @@ void Projectile::move()
         if (pos().x() < 0){
             scene()->removeItem(this);
             delete this;
+            game->bulletExists = 0;
             game->swap();
         }
 
@@ -117,6 +141,9 @@ void Projectile::move()
     {
         scene()->removeItem(this);
         delete this;
+        game->bulletExists = 0;
         game->swap();
     }
+
+
 }
