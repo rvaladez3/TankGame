@@ -26,7 +26,7 @@ public:
     int active = 1;
     Health * health;
     Wall * wall;
-    QTimer * timer;
+    QTimer * playerTimer;
 
 public slots:
     void swap();
