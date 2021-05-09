@@ -5,4 +5,7 @@
         <file>projectile.png</file>
         <file>projectileE.png</file>
     </qresource>
+    <qresource prefix="/Sounds">
+        <file>Sheeeesh.mp3</file>
+    </qresource>
 </RCC>
