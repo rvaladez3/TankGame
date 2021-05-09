@@ -1,6 +1,6 @@
 #include "game.h"
 #include <QBrush>
-
+#include <QTimer>
 
 
 Game::Game(QWidget *parent)
@@ -44,10 +44,16 @@ Game::Game(QWidget *parent)
 
     //enemyhealth
     scene->addItem((player2->h));
-    (player2->h)->setPos(540,0);
+    (player2->h)->setPos(580,0);
 
     //set inital focus
     player1->setFocus();
+
+
+    timer = new QTimer();
+    connect(timer, SIGNAL(timeout()), this, SLOT(swap()));
+
+    timer->start(5000);
 
     show();
 }
@@ -64,7 +70,7 @@ void Game::swap()
         active = 1;
         player1->setFocus();
     }
-
+    timer->start(5000);
 }
 
 void Game::GameOver(int id)
