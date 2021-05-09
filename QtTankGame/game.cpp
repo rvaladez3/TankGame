@@ -1,35 +1,35 @@
 #include "game.h"
 #include <QBrush>
 #include <QTimer>
-
+#include <QFont>
 
 Game::Game(QWidget *parent)
 {
     scene = new QGraphicsScene();
-    scene->setSceneRect(0,0,700,700);
+    scene->setSceneRect(0,0,1400,1050);
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
 
 
-    setFixedSize(700,700);
+    setFixedSize(1400,1050);
 
     wall = new Wall();
     scene->addItem(wall);
-    wall->setPos(350,350);
+    wall->setPos(700,525);
 
     //player 1
     player1 = new Player(0, 1);
     player1->setPixmap((QPixmap(":/Images/player.png")));
     //left side
-    player1->setPos(0,350);
+    player1->setPos(0,525);
     scene->addItem(player1);
 
     //player2
     player2 = new Player(0, 2);
     player2->setPixmap((QPixmap(":/Images/enemy.png")));
-    player2->setPos(600,350);
+    player2->setPos(1300,525);
     scene->addItem(player2);
 
     //make item focusable
@@ -44,16 +44,16 @@ Game::Game(QWidget *parent)
 
     //enemyhealth
     scene->addItem((player2->h));
-    (player2->h)->setPos(580,0);
+    (player2->h)->setPos(1280,0);
 
     //set inital focus
     player1->setFocus();
 
 
-    timer = new QTimer();
-    connect(timer, SIGNAL(timeout()), this, SLOT(swap()));
+    playerTimer = new QTimer();
+    connect(playerTimer, SIGNAL(timeout()), this, SLOT(swap()));
 
-    timer->start(5000);
+    playerTimer->start(30000);
 
     show();
 }
@@ -70,12 +70,13 @@ void Game::swap()
         active = 1;
         player1->setFocus();
     }
-    timer->start(5000);
+    playerTimer->start(30000);
 }
 
 void Game::GameOver(int id)
 {
     scene->clear();
+
 
     QString str = "Game Over!\nPlayer ";
     str += ((char)(id + '0'));
