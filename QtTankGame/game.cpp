@@ -2,6 +2,7 @@
 #include <QBrush>
 #include <QTimer>
 #include <QFont>
+#include <QRandomGenerator>
 
 Game::Game(QWidget *parent)
 {
@@ -15,9 +16,17 @@ Game::Game(QWidget *parent)
 
     setFixedSize(1400,1050);
 
+
     wall = new Wall();
     scene->addItem(wall);
     wall->setPos(700,525);
+    wall = new Wall();
+    scene->addItem(wall);
+    wall->setPos(QRandomGenerator::global()->bounded(0,350),QRandomGenerator::global()->bounded(0,350));
+    wall = new Wall();
+    scene->addItem(wall);
+    wall->setPos(QRandomGenerator::global()->bounded(0,350),QRandomGenerator::global()->bounded(0,350));
+
 
     //player 1
     player1 = new Player(0, 1);
