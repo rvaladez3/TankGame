@@ -1,0 +1,11 @@
+debug/Projectile.o
+debug/game.o
+debug/health.o
+debug/main.o
+debug/player.o
+debug/wall.o
+debug/qrc_res.o
+debug/moc_Projectile.o
+debug/moc_game.o
+debug/moc_player.o
+debug/moc_wall.o

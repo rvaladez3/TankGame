@@ -7,14 +7,14 @@
 Game::Game(QWidget *parent)
 {
     scene = new QGraphicsScene();
-    scene->setSceneRect(0,0,1400,1050);
+    scene->setSceneRect(0,0,1400,1000);
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
 
 
-    setFixedSize(1400,1050);
+    setFixedSize(1400,1000);
 
 
     wall = new Wall();
@@ -22,10 +22,29 @@ Game::Game(QWidget *parent)
     wall->setPos(700,525);
     wall = new Wall();
     scene->addItem(wall);
-    wall->setPos(QRandomGenerator::global()->bounded(0,350),QRandomGenerator::global()->bounded(0,350));
+    wall->setPos(QRandomGenerator::global()->bounded(50,900),QRandomGenerator::global()->bounded(-100,400));
     wall = new Wall();
     scene->addItem(wall);
-    wall->setPos(QRandomGenerator::global()->bounded(0,350),QRandomGenerator::global()->bounded(0,350));
+    wall->setPos(QRandomGenerator::global()->bounded(50,900),QRandomGenerator::global()->bounded(-100,400));
+    wall = new Wall();
+    scene->addItem(wall);
+    wall->setPos(QRandomGenerator::global()->bounded(50,900),QRandomGenerator::global()->bounded(-100,400));
+    wall = new Wall();
+    scene->addItem(wall);
+    wall->setPos(QRandomGenerator::global()->bounded(50,900),QRandomGenerator::global()->bounded(-100,400));
+    wall = new Wall();
+    scene->addItem(wall);
+    wall->setPos(QRandomGenerator::global()->bounded(50,900),QRandomGenerator::global()->bounded(-100,400));
+    wall = new Wall();
+    scene->addItem(wall);
+    wall->setPos(QRandomGenerator::global()->bounded(50,900),QRandomGenerator::global()->bounded(-100,400));
+    wall = new Wall();
+    scene->addItem(wall);
+    wall->setPos(QRandomGenerator::global()->bounded(50,900),QRandomGenerator::global()->bounded(-100,400));
+    wall = new Wall();
+    scene->addItem(wall);
+    wall->setPos(QRandomGenerator::global()->bounded(50,900),QRandomGenerator::global()->bounded(-100,400));
+
 
 
     //player 1
@@ -97,7 +116,7 @@ void Game::GameOver(int id)
 
     QGraphicsTextItem *text = scene->addText(str);
     //text->setTextWidth(300);
-    text->setPos(300, 300);
+    text->setPos(700, 525);
 
     qDebug() << "Game Over message displayed" << Qt::endl;
 }

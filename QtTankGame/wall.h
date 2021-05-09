@@ -9,6 +9,7 @@ public:
   Wall(QGraphicsItem * parent = 0);
 
   void createline();
+  int w,x,y,z;
 };
 
 #endif // WALL_H

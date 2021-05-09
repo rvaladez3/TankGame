@@ -1,0 +1,11 @@
+release/Projectile.o
+release/game.o
+release/health.o
+release/main.o
+release/player.o
+release/wall.o
+release/qrc_res.o
+release/moc_Projectile.o
+release/moc_game.o
+release/moc_player.o
+release/moc_wall.o

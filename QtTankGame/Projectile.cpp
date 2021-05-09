@@ -67,6 +67,7 @@ void Projectile::move1()
             }
             if (typeid(*(coll_items[i])) == typeid(Wall))
             {
+                scene()->removeItem(coll_items[i]);
                 scene()->removeItem(this);
                 delete this;
                 game->bulletExists = 0;
@@ -120,6 +121,7 @@ void Projectile::move2()
             }
             if (typeid(*(coll_items[i])) == typeid(Wall))
             {
+                scene()->removeItem(coll_items[i]);
                 scene()->removeItem(this);
                 delete this;
                 game->bulletExists = 0;
