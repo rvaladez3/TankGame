@@ -7,6 +7,7 @@ class Wall: public QObject, public QGraphicsLineItem{
     Q_OBJECT;
 public:
   Wall(QGraphicsItem * parent = 0);
+  int w, x, y, z;
 
   void createline();
   int w,x,y,z;

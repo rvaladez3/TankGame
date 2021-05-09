@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include <QMediaPLayer>
 
 
 extern Game * game;
@@ -76,6 +77,10 @@ void Player::keyPressEvent(QKeyEvent *event)
     }
 
     if(event->key() == Qt::Key_Space){
+
+        QMediaPlayer * music = new QMediaPlayer();
+        music->setMedia(QUrl("qrc:/Sounds/Sheeeesh.mp3"));
+        music->play();
         if (game->bulletExists == 0)
         {
             //create projectile and pass it velocity in pixels
