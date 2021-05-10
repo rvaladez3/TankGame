@@ -29,7 +29,31 @@ void Player::keyPressEvent(QKeyEvent *event)
         {
             if (typeid(*(coll_items[i])) == typeid(Wall))
             {
+                if(game->active == 1){
+
+                game->player1->decrease();
                 scene()->removeItem(coll_items[i]);
+
+                if (game->player1->getHealth() <= 0){
+                            game->GameOver(2);
+                            break;
+                 }
+
+
+                }
+                if(game->active == 2){
+
+                game->player2->decrease();
+                scene()->removeItem(coll_items[i]);
+
+                if (game->player2->getHealth() <= 0){
+                        game->GameOver(1);
+                        break;
+                }
+
+
+                }
+
 
                 game->swap();
             }
@@ -44,7 +68,30 @@ void Player::keyPressEvent(QKeyEvent *event)
        {
            if (typeid(*(coll_items[i])) == typeid(Wall))
            {
+               if(game->active == 1){
+
+               game->player1->decrease();
                scene()->removeItem(coll_items[i]);
+
+               if (game->player1->getHealth() <= 0){
+                           game->GameOver(2);
+                           break;
+                }
+
+
+               }
+               if(game->active == 2){
+
+               game->player2->decrease();
+               scene()->removeItem(coll_items[i]);
+
+               if (game->player2->getHealth() <= 0){
+                       game->GameOver(1);
+                       break;
+               }
+
+
+               }
                game->swap();
            }
        }
@@ -55,11 +102,32 @@ void Player::keyPressEvent(QKeyEvent *event)
         QList<QGraphicsItem *> coll_items = collidingItems();
        for (int i=0, n=coll_items.size(); i<n; i++)
        {
-           if (typeid(*(coll_items[i])) == typeid(Wall))
-           {
-               scene()->removeItem(coll_items[i]);
-               game->swap();
+           if(game->active == 1){
+
+           game->player1->decrease();
+           scene()->removeItem(coll_items[i]);
+
+           if (game->player1->getHealth() <= 0){
+                       game->GameOver(2);
+                       break;
+            }
+
+
            }
+           if(game->active == 2){
+
+           game->player2->decrease();
+           scene()->removeItem(coll_items[i]);
+
+           if (game->player2->getHealth() <= 0){
+                   game->GameOver(1);
+                   break;
+           }
+
+
+           }
+
+           game->swap();
        }
     }
 
@@ -68,11 +136,31 @@ void Player::keyPressEvent(QKeyEvent *event)
        QList<QGraphicsItem *> coll_items = collidingItems();
       for (int i=0, n=coll_items.size(); i<n; i++)
       {
-          if (typeid(*(coll_items[i])) == typeid(Wall))
-          {
-              scene()->removeItem(coll_items[i]);
-              game->swap();
+          if(game->active == 1){
+
+          game->player1->decrease();
+          scene()->removeItem(coll_items[i]);
+
+          if (game->player1->getHealth() <= 0){
+                      game->GameOver(2);
+                      break;
+           }
+
+
           }
+          if(game->active == 2){
+
+          game->player2->decrease();
+          scene()->removeItem(coll_items[i]);
+
+          if (game->player2->getHealth() <= 0){
+                  game->GameOver(1);
+                  break;
+          }
+
+
+          }
+          game->swap();
       }
     }
 
