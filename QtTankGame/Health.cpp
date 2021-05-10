@@ -12,8 +12,8 @@ Health::Health(QGraphicsItem *parent): QGraphicsTextItem(parent)
 
     //qDebug() << "Health ID = " << id << Qt::endl;
 
-    setDefaultTextColor(Qt::blue);
-    setFont(QFont("times",16));
+    setDefaultTextColor(Qt::white);
+    setFont(QFont("times",16,QFont::Bold));
     //setPos(0,0);
 }
 

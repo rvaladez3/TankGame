@@ -4,6 +4,7 @@
 #include <QFont>
 #include <QRandomGenerator>
 
+
 Game::Game(QWidget *parent)
 {
     scene = new QGraphicsScene();
@@ -11,10 +12,12 @@ Game::Game(QWidget *parent)
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setBackgroundBrush(QBrush(QImage(":/Images/baby.jpg")));
 
 
 
     setFixedSize(1400,1000);
+
 
 
     wall = new Wall();
@@ -68,11 +71,11 @@ Game::Game(QWidget *parent)
     //health
     //health = new Health();
     scene->addItem((player1->h));
-    (player1->h)->setPos(0,0);
+    (player1->h)->setPos(300,0);
 
     //enemyhealth
     scene->addItem((player2->h));
-    (player2->h)->setPos(1250,0);
+    (player2->h)->setPos(950,0);
 
     //set inital focus
     player1->setFocus();

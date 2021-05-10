@@ -4,6 +4,9 @@
         <file>player.png</file>
         <file>projectile.png</file>
         <file>projectileE.png</file>
+        <file>background.png</file>
+        <file>baby.png</file>
+        <file>baby.jpg</file>
     </qresource>
     <qresource prefix="/Sounds">
         <file>Sheeeesh.mp3</file>
