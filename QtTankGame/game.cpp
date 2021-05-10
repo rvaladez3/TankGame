@@ -77,8 +77,11 @@ Game::Game(QWidget *parent)
     scene->addItem((player2->h));
     (player2->h)->setPos(950,0);
 
-    //set inital focus
-    player1->setFocus();
+    int playerStart = QRandomGenerator::global()->bounded(0,2);
+    if(playerStart == 0)
+        player1->setFocus();
+    else
+        player2->setFocus();
 
     //sets time limit for each turn
     playerTimer = new QTimer();
