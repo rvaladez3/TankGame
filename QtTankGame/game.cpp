@@ -109,14 +109,12 @@ void Game::swap()
     {
         active = 2;
         player2->setFocus();
-        qDebug() << "Switching Active Character" << Qt::endl;
         currentPlayer->setPlainText(QString("Active Player: 2"));
     }
     else
     {
         active = 1;
         player1->setFocus();
-        qDebug() << "Switching Active Player" << Qt::endl;
         currentPlayer->setPlainText(QString("Active Player: 1"));
     }
     //currentPlayer->switchPlayer();

@@ -1,4 +1,5 @@
 debug/Projectile.o
+debug/activePlayer.o
 debug/game.o
 debug/health.o
 debug/main.o

@@ -1,4 +1,5 @@
 release/Projectile.o
+release/activePlayer.o
 release/game.o
 release/health.o
 release/main.o
