@@ -13,6 +13,7 @@
 #include "Health.h"
 #include <QTimer>
 #include "wall.h"
+#include "activePlayer.h"
 
 class Game: public QGraphicsView{
     Q_OBJECT
@@ -28,6 +29,7 @@ public:
     Health * health;
     Wall * wall;
     QTimer * playerTimer;
+    ActivePlayer * currentPlayer;
 
 public slots:
     void swap();

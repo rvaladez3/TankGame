@@ -77,11 +77,22 @@ Game::Game(QWidget *parent)
     scene->addItem((player2->h));
     (player2->h)->setPos(950,0);
 
+    currentPlayer = new ActivePlayer();
+    scene->addItem(currentPlayer);
+    currentPlayer->setPos(600,0);
+
     int playerStart = QRandomGenerator::global()->bounded(0,2);
-    if(playerStart == 0)
+    if(playerStart == 0){
         player1->setFocus();
-    else
+        currentPlayer->setPlainText(QString("Active Player: 1"));
+        active = 1;
+    }
+    else{
         player2->setFocus();
+        currentPlayer->setPlainText(QString("Active Player: 2"));
+        active = 2;
+    }
+
 
     //sets time limit for each turn
     playerTimer = new QTimer();
@@ -98,12 +109,17 @@ void Game::swap()
     {
         active = 2;
         player2->setFocus();
+        qDebug() << "Switching Active Character" << Qt::endl;
+        currentPlayer->setPlainText(QString("Active Player: 2"));
     }
     else
     {
         active = 1;
         player1->setFocus();
+        qDebug() << "Switching Active Player" << Qt::endl;
+        currentPlayer->setPlainText(QString("Active Player: 1"));
     }
+    //currentPlayer->switchPlayer();
     playerTimer->start(30000);
 }
 

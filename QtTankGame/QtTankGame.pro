@@ -11,6 +11,7 @@ CONFIG += c++11
 
 SOURCES += \
     Projectile.cpp \
+    activePlayer.cpp \
     game.cpp \
     health.cpp \
     main.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
 HEADERS += \
     Health.h \
     Projectile.h \
+    activePlayer.h \
     game.h \
     health.h \
     player.h \

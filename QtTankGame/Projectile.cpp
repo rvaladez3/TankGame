@@ -129,7 +129,7 @@ void Projectile::move2()
             }
         }
 
-        if (pos().x() < 0){
+        if (pos().x() < 1){
             scene()->removeItem(this);
             delete this;
             game->bulletExists = 0;
